@@ -1,29 +1,59 @@
-# kiosktron-2
+# kiosktron 2 🤖
 
-## Project setup
-```
-yarn install
+> A kiosk app that rotates on URL list
+
+Kiosktron version 2 is built with vue-cli and vue-cli-plugin-electron-builder, with electron 6.Kiosktron version 1 was built with electron-vue and electron 1.8
+
+## Why ?
+
+Because you want to test url trhough Electron and see how it works.
+Because, you want to automatically test a series of URL and see how they run.
+Because, you just want to run your site in an electron process and make sure you catch errors
+Because, you'd like to control remotely a browser and display it in fullscreen on Windows, macOS and Linux.
+
+## Features
+
+- timer to automatically change url from settings
+- error logged if issue arised
+- library integration
+
+## Usage
+
+Feel the URL list in `settings/settings.json` and choose a timeout between each of the URL :
+
+```json
+{
+  "app": {
+    "sites": [
+        "file://Users/gabrielstuff/Downloads/faceDemo/index.html",
+        "https://threejs.org/examples/#webgl_animation_cloth",
+        "https://threejs.org/examples/?q=shado#webgl_shadowmap_performance",
+        "https://codepen.io/",
+        "https://tympanus.net/Tutorials/TheAviator/",
+        "https://gl-transitions.com/"
+    ]
+  },
+  "durations": {
+    "intervalRotation": 10000
+  }
+}
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
+#### Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:9080
+npm run electron:serve
+
+# build electron application for production
+npm run electron:build
+
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+## Support library injection
 
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Should support library injection :
+https://stackoverflow.com/questions/32621988/electron-jquery-is-not-defined
